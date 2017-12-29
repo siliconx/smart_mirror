@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #dbdbdb;
+}
+
+body {
+  background: black;
+}
+
+p {
+  line-height: 20px;
+  font-size: 15px;
+}
+
+#loading {
+  margin: 100px;
+}
+
+#box_day {
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.table_day {
+  float: left;
+  width: 152px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.div0, .div1 {
+  border-right: 1px solid;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  height: 54px;
+  width: 54px;
+}
+
+ul {
+  list-style: none;
+}
