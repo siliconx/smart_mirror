@@ -1,16 +1,16 @@
-config = {
+weather_config = {
     url: '/',
     type: 'GET',
     dataType: 'json',
     success: function(json) {
-        render(json);
+        render_weather(json);
     },
     error: function(resp) {
         error_handler(resp);
     }
 };
 
-function render(json) {
+function render_weather(json) {
     $("#loading").hide();
     $("#box_day").empty();  // clear
 
@@ -36,13 +36,27 @@ function render(json) {
         $("#box_day").append(template);
     }
 
-    window.setTimeout(function(){$.ajax(config)}, 300000);  // 5min
+    clear_float = `
+      <div class="clear_float"></div>
+      `;
+    $('#box_day').append(clear_float);
+
+    window.setTimeout(function(){$.ajax(weather_config)}, 300000);  // 5min
 }
 
 function error_handler(resp) {
     console.log("error: " + resp);
 
-    window.setTimeout(function(){$.ajax(config)}, 5000);  // 5s
+    window.setTimeout(function(){$.ajax(weather_config)}, 5000);  // 5s
 }
 
-$.ajax(config);
+function render_words() {
+    array = ["如果有人追你，我会绊倒他", "命运不如你意，我如你意.", "我的每一支笔都知道你的名字", "去吧，皮卡丘"];
+    index = Math.floor(Math.random() * array.length);
+    words = array[index];
+    $('#words').html(words);
+}
+
+$.ajax(weather_config);
+render_words();
+window.setInterval(render_words, 1000);
