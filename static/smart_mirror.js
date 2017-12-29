@@ -6,7 +6,16 @@ weather_config = {
         render_weather(json);
     },
     error: function(resp) {
-        error_handler(resp);
+        weather_error_handler(resp);
+    }
+};
+
+words_config = {
+    url: '/static/words.json',
+    type: 'GET',
+    dataType: 'json',
+    success: function(json) {
+        render_words(json);
     }
 };
 
@@ -44,19 +53,19 @@ function render_weather(json) {
     window.setTimeout(function(){$.ajax(weather_config)}, 300000);  // 5min
 }
 
-function error_handler(resp) {
+function weather_error_handler(resp) {
     console.log("error: " + resp);
 
     window.setTimeout(function(){$.ajax(weather_config)}, 5000);  // 5s
 }
 
-function render_words() {
-    array = ["如果有人追你，我会绊倒他", "命运不如你意，我如你意.", "我的每一支笔都知道你的名字", "去吧，皮卡丘"];
-    index = Math.floor(Math.random() * array.length);
-    words = array[index];
+function render_words(json) {
+    index = Math.floor(Math.random() * json.array.length);
+    words = json.array[index];
     $('#words').html(words);
 }
 
 $.ajax(weather_config);
-render_words();
-window.setInterval(render_words, 1000);
+$.ajax(words_config)
+
+window.setInterval(function(){$.ajax(words_config)}, 5000);
