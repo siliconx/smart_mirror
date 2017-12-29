@@ -68,4 +68,4 @@ function render_words(json) {
 $.ajax(weather_config);
 $.ajax(words_config)
 
-window.setInterval(function(){$.ajax(words_config)}, 5000);
+window.setInterval(function(){$.ajax(words_config)}, 3600000);

@@ -60,6 +60,10 @@ img {
   text-align: center;
 }
 
+#words {
+  font-size: 20px;
+}
+
 .clear_float {
   clear: both;
 }
