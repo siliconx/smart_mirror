@@ -11,10 +11,17 @@ body {
 p {
   line-height: 22px;
   font-size: 16px;
+  line-height: 25px;
 }
 
 #loading {
-  margin: 100px;
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+#loading > p {
+  padding-left: 10px;
+  font-size: 18px;
 }
 
 #box_day {
