@@ -14,12 +14,6 @@ function render(json) {
     $("#loading").hide();
     $("#box_day").empty();  // clear
 
-    days = {
-        0: '今',
-        1: '明',
-        2: '后'
-    }
-
     for (i = 0; i < json.rows.length; ++i) {
         date_weather = json.rows[i].dateWeather.split(" ");
         date = date_weather[0];
@@ -31,7 +25,7 @@ function render(json) {
 
         template = `
         <div class="table_day div${i}">
-          <h3 id="date"><b>${date}</b> <em>${days[i]}天</em></h3>
+          <h2 id="date"><b>${date}</b></h2>
           <ul>
             <li class="img"><img src=${pic_url} /></li>
             <li><p>${weather}</p></li>

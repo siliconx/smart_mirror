@@ -9,8 +9,8 @@ body {
 }
 
 p {
-  line-height: 20px;
-  font-size: 15px;
+  line-height: 22px;
+  font-size: 17px;
 }
 
 #loading {
@@ -25,7 +25,7 @@ p {
 
 .table_day {
   float: left;
-  width: 152px;
+  width: 157px;
   font-size: 13px;
   text-align: center;
 }
