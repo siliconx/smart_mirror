@@ -29,7 +29,7 @@ def get_weather():
         return
 
     form = {  # form be sent
-        "username": "6103115112",
+        "username": "6103******",
         "password": "***",
         "lt": lt,
         "execution": execution,
