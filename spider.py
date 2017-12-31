@@ -30,7 +30,7 @@ def get_weather():
 
     form = {  # form be sent
         "username": "6103115112",
-        "password": "108238",
+        "password": "***",
         "lt": lt,
         "execution": execution,
         "_eventId": "submit",
