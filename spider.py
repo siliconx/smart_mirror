@@ -19,14 +19,14 @@ def get_weather():
     if lt:
         lt = lt.group(1)
     else:
-        return
+        return ""
 
     # get hidden item 'execution' of form by re
     execution = re.search(r'name="execution" value="(.*)"', response.text)
     if execution:
         execution = execution.group(1)
     else:
-        return
+        return ""
 
     form = {  # form be sent
         "username": "6103******",
@@ -43,7 +43,7 @@ def get_weather():
         # new cookie set on the last rediction
         cookie = response.history[-1].headers['Set-Cookie']
     else:
-        return
+        return ""
 
     # get weather by new cookie
     weather = requests.get(weather_url, headers={'Cookie': cookie})
